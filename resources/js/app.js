@@ -51,4 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (shellPage) {
         shellPage.classList.remove('page-exit');
     }
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    if (revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.15,
+        });
+
+        revealItems.forEach((item) => {
+            item.classList.add('reveal');
+            revealObserver.observe(item);
+        });
+    }
 });
