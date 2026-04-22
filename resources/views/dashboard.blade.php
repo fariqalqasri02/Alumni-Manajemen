@@ -33,6 +33,42 @@
                 @endforeach
             </div>
 
+            <div class="panel p-5 md:p-6">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h3 class="section-title text-lg!">Statistik Tracer Study</h3>
+                        <p class="mt-1 text-sm text-slate-500">Distribusi status alumni dari seluruh respons tracer study.</p>
+                    </div>
+                    <div class="rounded-2xl bg-cyan-50 px-4 py-3 text-right">
+                        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Total Respons</p>
+                        <p class="mt-1 text-2xl font-bold text-slate-900">{{ $tracerChartData['total'] }}</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="h-72">
+                        <canvas id="dashboardTracerChart"></canvas>
+                    </div>
+                </div>
+                <div class="mt-5 space-y-3">
+                    @forelse ($tracerStats as $status => $total)
+                        <div class="rounded-2xl border border-slate-200 px-4 py-3">
+                            <div class="flex items-center justify-between gap-3 text-sm text-slate-600">
+                                <span>{{ ucfirst(str_replace('_', ' ', $status)) }}</span>
+                                <span class="font-semibold text-slate-900">{{ $total }} alumni</span>
+                            </div>
+                            <div class="mt-2 h-2 rounded-full bg-slate-100">
+                                <div
+                                    class="h-2 rounded-full bg-cyan-500"
+                                    style="width: {{ $tracerChartData['total'] > 0 ? max(8, round(($total / $tracerChartData['total']) * 100)) : 0 }}%"
+                                ></div>
+                            </div>
+                        </div>
+                    @empty
+                        <p class="text-sm text-slate-500">Belum ada data tracer study.</p>
+                    @endforelse
+                </div>
+            </div>
+
             <div class="grid gap-6 lg:grid-cols-2">
                 <div class="panel p-5 md:p-6">
                     <div class="flex items-center justify-between">
@@ -84,42 +120,6 @@
                         </div>
                     @empty
                         <p class="text-sm text-slate-500">Belum ada notifikasi.</p>
-                    @endforelse
-                </div>
-            </div>
-
-            <div class="panel p-5 md:p-6">
-                <div class="flex items-start justify-between gap-4">
-                    <div>
-                        <h3 class="section-title text-lg!">Statistik Tracer Study</h3>
-                        <p class="mt-1 text-sm text-slate-500">Distribusi status alumni dari seluruh respons tracer study.</p>
-                    </div>
-                    <div class="rounded-2xl bg-cyan-50 px-4 py-3 text-right">
-                        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Total Respons</p>
-                        <p class="mt-1 text-2xl font-bold text-slate-900">{{ $tracerChartData['total'] }}</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <div class="h-72">
-                        <canvas id="dashboardTracerChart"></canvas>
-                    </div>
-                </div>
-                <div class="mt-5 space-y-3">
-                    @forelse ($tracerStats as $status => $total)
-                        <div class="rounded-2xl border border-slate-200 px-4 py-3">
-                            <div class="flex items-center justify-between gap-3 text-sm text-slate-600">
-                                <span>{{ ucfirst(str_replace('_', ' ', $status)) }}</span>
-                                <span class="font-semibold text-slate-900">{{ $total }} alumni</span>
-                            </div>
-                            <div class="mt-2 h-2 rounded-full bg-slate-100">
-                                <div
-                                    class="h-2 rounded-full bg-cyan-500"
-                                    style="width: {{ $tracerChartData['total'] > 0 ? max(8, round(($total / $tracerChartData['total']) * 100)) : 0 }}%"
-                                ></div>
-                            </div>
-                        </div>
-                    @empty
-                        <p class="text-sm text-slate-500">Belum ada data tracer study.</p>
                     @endforelse
                 </div>
             </div>
