@@ -10,7 +10,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="auth-shell">
+        <div class="auth-shell" style="animation: fadeIn 0.5s ease-in-out;">
             <div class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl items-center justify-center">
                 <div class="grid w-full items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                     <div class="hidden text-white lg:block">
