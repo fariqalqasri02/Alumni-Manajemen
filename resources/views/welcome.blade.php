@@ -41,50 +41,10 @@
                                 <a href="{{ route('login') }}" class="btn-secondary !rounded-full !px-6 !py-3">Masuk ke Portal</a>
                             </div>
 
-                            <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                                <div class="rounded-[28px] border border-white/80 bg-white/90 p-5 shadow-lg shadow-slate-200/50">
-                                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Pengguna</p>
-                                    <p class="mt-3 text-4xl font-bold text-slate-950">{{ $publicStats['users'] }}</p>
-                                    <p class="mt-2 text-sm text-slate-500">Akun aktif dalam ekosistem alumni.</p>
-                                </div>
-                                <div class="rounded-[28px] border border-white/80 bg-slate-950 p-5 text-white shadow-lg shadow-slate-300/40">
-                                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Lowongan</p>
-                                    <p class="mt-3 text-4xl font-bold">{{ $publicStats['jobs'] }}</p>
-                                    <p class="mt-2 text-sm text-slate-300">Peluang kerja yang siap diakses alumni.</p>
-                                </div>
-                                <div class="rounded-[28px] border border-white/80 bg-white/90 p-5 shadow-lg shadow-slate-200/50">
-                                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Kegiatan</p>
-                                    <p class="mt-3 text-4xl font-bold text-slate-950">{{ $publicStats['events'] }}</p>
-                                    <p class="mt-2 text-sm text-slate-500">Agenda karier yang bisa diikuti.</p>
-                                </div>
-                                <div class="rounded-[28px] border border-amber-200 bg-amber-50/90 p-5 shadow-lg shadow-amber-100/70">
-                                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-amber-700">Tracer Study</p>
-                                    <p class="mt-3 text-4xl font-bold text-slate-950">{{ $publicStats['tracer'] }}</p>
-                                    <p class="mt-2 text-sm text-slate-600">Respons yang membentuk insight kampus.</p>
-                                </div>
-                            </div>
+
                         </div>
 
                         <div class="grid gap-5">
-                            <div class="rounded-[32px] border border-slate-200/80 bg-white/90 p-6 shadow-xl shadow-slate-200/60 backdrop-blur">
-                                <div class="flex items-start justify-between gap-4">
-                                    <div>
-                                        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">Statistik Publik</p>
-                                        <h3 class="mt-3 text-2xl font-semibold text-slate-950">Ringkasan tracer study alumni</h3>
-                                    </div>
-                                    <div class="rounded-2xl bg-slate-950 px-4 py-3 text-right text-white">
-                                        <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Total</p>
-                                        <p class="mt-1 text-2xl font-bold">{{ $publicStats['tracer'] }}</p>
-                                    </div>
-                                </div>
-                                <div class="mt-6 h-72">
-                                    <canvas id="landingTracerChart"></canvas>
-                                </div>
-                                @if (count($publicTracerChart['labels']) === 0)
-                                    <p class="mt-4 text-sm text-slate-500">Belum ada data tracer study yang bisa ditampilkan.</p>
-                                @endif
-                            </div>
-
                             <div class="grid gap-5 sm:grid-cols-2">
                                 <div class="rounded-[28px] border border-slate-200/80 bg-white/80 p-6 shadow-md shadow-slate-200/40">
                                     <p class="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Mahasiswa & Alumni</p>
