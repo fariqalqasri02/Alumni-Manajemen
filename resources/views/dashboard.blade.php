@@ -36,7 +36,7 @@
             <div class="grid gap-6 lg:grid-cols-2">
                 <div class="panel p-5 md:p-6">
                     <div class="flex items-center justify-between">
-                        <h3 class="section-title !text-lg">Lowongan Terbaru</h3>
+                        <h3 class="section-title text-lg!">Lowongan Terbaru</h3>
                         <a href="{{ route('jobs.index') }}" class="text-sm font-semibold text-cyan-700">Lihat semua</a>
                     </div>
                     <div class="mt-4 space-y-4">
@@ -54,7 +54,7 @@
 
                 <div class="panel p-5 md:p-6">
                     <div class="flex items-center justify-between">
-                        <h3 class="section-title !text-lg">Kegiatan Karier</h3>
+                        <h3 class="section-title text-lg!">Kegiatan Karier</h3>
                         <a href="{{ route('events.index') }}" class="text-sm font-semibold text-cyan-700">Lihat semua</a>
                     </div>
                     <div class="mt-4 space-y-4">
@@ -72,7 +72,7 @@
             </div>
 
             <div class="panel p-5 md:p-6">
-                <h3 class="section-title !text-lg">Notifikasi Sistem</h3>
+                <h3 class="section-title text-lg!">Notifikasi Sistem</h3>
                 <div class="mt-4 space-y-3">
                     @forelse ($notifications as $notification)
                         <div class="rounded-2xl border border-slate-200 p-4">
@@ -91,7 +91,7 @@
             <div class="panel p-5 md:p-6">
                 <div class="flex items-start justify-between gap-4">
                     <div>
-                        <h3 class="section-title !text-lg">Statistik Tracer Study</h3>
+                        <h3 class="section-title text-lg!">Statistik Tracer Study</h3>
                         <p class="mt-1 text-sm text-slate-500">Distribusi status alumni dari seluruh respons tracer study.</p>
                     </div>
                     <div class="rounded-2xl bg-cyan-50 px-4 py-3 text-right">
@@ -128,7 +128,7 @@
                 <div class="grid gap-6 lg:grid-cols-2">
                     <div class="panel p-5 md:p-6">
                         <div class="flex items-center justify-between">
-                            <h3 class="section-title !text-lg">Pengguna Terbaru</h3>
+                            <h3 class="section-title text-lg!">Pengguna Terbaru</h3>
                             <a href="{{ route('admin.users.index') }}" class="text-sm font-semibold text-cyan-700">Kelola user</a>
                         </div>
                         <div class="mt-4 space-y-3">
@@ -143,7 +143,7 @@
 
                     <div class="panel p-5 md:p-6">
                         <div class="flex items-center justify-between">
-                            <h3 class="section-title !text-lg">Pendaftaran Kegiatan Terbaru</h3>
+                            <h3 class="section-title text-lg!">Pendaftaran Kegiatan Terbaru</h3>
                             <a href="{{ route('admin.reports.index') }}" class="text-sm font-semibold text-cyan-700">Lihat laporan</a>
                         </div>
                         <div class="mt-4 space-y-3">
@@ -159,7 +159,7 @@
             @else
                 <div class="panel p-5 md:p-6">
                     <div class="flex items-center justify-between">
-                        <h3 class="section-title !text-lg">Riwayat Pendaftaran Kegiatan</h3>
+                        <h3 class="section-title text-lg!">Riwayat Pendaftaran Kegiatan</h3>
                         <a href="{{ route('events.index') }}" class="text-sm font-semibold text-cyan-700">Cari kegiatan</a>
                     </div>
                     <div class="mt-4 grid gap-3 md:grid-cols-2">
