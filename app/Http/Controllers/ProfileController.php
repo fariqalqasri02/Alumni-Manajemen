@@ -33,7 +33,7 @@ class ProfileController extends Controller
 
         $request->user()->fill([
             'name' => $validated['name'],
-            'email' => $validated['email'],
+            'email' => strtolower($validated['email']),
             'nim' => $validated['nim'] ?? null,
             'phone' => $validated['phone'] ?? null,
             'user_type' => ($validated['user_type'] ?? null) ?: $currentUserType,
